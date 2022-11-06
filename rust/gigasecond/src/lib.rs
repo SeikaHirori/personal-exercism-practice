@@ -25,9 +25,18 @@ pub fn after(start: DateTime) -> DateTime {
 
     // Write logic here
 
+
     return DateTime::new(
-        Date::from_calendar_date(year, month, day).unwrap(), 
-        Time::from_hms(hour, minute, second).unwrap(),
+        Date::from_calendar_date(
+            year, 
+            month.try_into().unwrap(), 
+            day
+        ).unwrap(), 
+        Time::from_hms(
+            hour, 
+            minute, 
+            second
+        ).unwrap(),
     )
 
 }
