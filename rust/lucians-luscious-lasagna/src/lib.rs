@@ -2,6 +2,8 @@
 // to enable stricter warnings.
 #![allow(unused)]
 
+const TEST_LAYER_THINGS:i32 = 0; // RFER 4
+
 pub fn expected_minutes_in_oven() -> i32 {
     let result:i32 = 40;
     
