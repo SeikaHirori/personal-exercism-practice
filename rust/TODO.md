@@ -21,5 +21,9 @@ House keeping:
     - ATTEMPTS:
         - 12-15-2022
 
+### Floating Point Numbers
+- Lecture:
+    - https://exercism.org/tracks/rust/concepts/floating-point-numbers
+    
 - [ ] Assembly Line
     - https://exercism.org/tracks/rust/exercises/assembly-line
