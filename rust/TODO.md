@@ -24,6 +24,8 @@ House keeping:
 ### Floating Point Numbers
 - Lecture:
     - https://exercism.org/tracks/rust/concepts/floating-point-numbers
-    
+
 - [ ] Assembly Line
     - https://exercism.org/tracks/rust/exercises/assembly-line
+    - Attempts:
+        - 2022-12-15
