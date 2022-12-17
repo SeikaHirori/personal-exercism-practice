@@ -8,20 +8,23 @@ const CARS_PER_SPEED:f64 = 221.0;
 
 pub fn production_rate_per_hour(speed: u8) -> f64 {
     // unimplemented!("calculate hourly production rate at speed: {}", speed)
-    let success_rate:f64 = success_rate(speed);
-
     let result:f64 = {
-        f64::from(speed) * CARS_PER_SPEED * success_rate
+        f64::from(speed) * f64::from(CARS_PER_SPEED) * f64::from(success_rate(speed))
     };
 
     result
 }
 
 pub fn working_items_per_minute(speed: u8) -> u32 {
-    unimplemented!("calculate the amount of working items at speed: {}", speed)
+    // unimplemented!("calculate the amount of working items at speed: {}", speed)
+    let result:u32 = {
+        let prph:f64 = f64::from(speed) * CARS_PER_SPEED * success_rate(speed);
+        let minute_conversion = prph / 60.0;
 
+        minute_conversion as u32
+    };
 
-
+    result
 } // TODO
 
 pub fn success_rate(speed: u8) -> f64 {
