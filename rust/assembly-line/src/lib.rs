@@ -18,7 +18,7 @@ pub fn production_rate_per_hour(speed: u8) -> f64 {
 pub fn working_items_per_minute(speed: u8) -> u32 {
     // unimplemented!("calculate the amount of working items at speed: {}", speed)
     let result:u32 = {
-        let prph:f64 = f64::from(speed) * CARS_PER_SPEED * success_rate(speed);
+        let prph:f64 = production_rate_per_hour(speed);
         let minute_conversion = prph / 60.0;
 
         minute_conversion as u32
