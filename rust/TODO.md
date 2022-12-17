@@ -25,7 +25,16 @@ House keeping:
 - Lecture:
     - https://exercism.org/tracks/rust/concepts/floating-point-numbers
 
-- [ ] Assembly Line
+- [x] Assembly Line
     - https://exercism.org/tracks/rust/exercises/assembly-line
     - Attempts:
         - 2022-12-15
+
+### Methods
+- Lecture:
+    - https://exercism.org/tracks/rust/concepts/methods
+
+- [ ] Health Statistics
+    - https://exercism.org/tracks/rust/exercises/health-statistics
+    - Attempts:
+        - 
