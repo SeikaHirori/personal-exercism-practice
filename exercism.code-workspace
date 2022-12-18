@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "typescript"
+		},
+		{
+			"path": "rust/health-statistics"
 		}
 	],
 	"settings": {}

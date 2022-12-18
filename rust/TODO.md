@@ -34,7 +34,36 @@ House keeping:
 - Lecture:
     - https://exercism.org/tracks/rust/concepts/methods
 
-- [ ] Health Statistics
+- [x] Health Statistics
     - https://exercism.org/tracks/rust/exercises/health-statistics
     - Attempts:
-        - 
+        - 2022-12-17
+
+### Enums Basic
+- Lecture:
+    - https://exercism.org/tracks/rust/concepts/enums
+
+- [ ] Semi Structured Logs
+    - https://exercism.org/tracks/rust/exercises/semi-structured-logs
+    - Attempts:
+        - 2022-12-17
+
+- [ ] Sublist
+    - https://exercism.org/tracks/rust/exercises/sublist
+
+- [ ] Poker
+    - https://exercism.org/tracks/rust/exercises/poker
+- [ ] Allergies
+    - https://exercism.org/tracks/rust/exercises/allergies
+
+- [ ] Tournament
+    - https://exercism.org/tracks/rust/exercises/tournament
+
+- [ ] Robot Simulator 
+    - https://exercism.org/tracks/rust/exercises/robot-simulator
+
+- [ ] Rectangles
+    - https://exercism.org/tracks/rust/exercises/rectangles
+
+- [ ] Scale Generator 
+    - https://exercism.org/tracks/rust/exercises/scale-generator
