@@ -7,7 +7,7 @@
 			"path": "typescript"
 		},
 		{
-			"path": "rust/health-statistics"
+			"path": "rust"
 		}
 	],
 	"settings": {}
