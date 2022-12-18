@@ -43,7 +43,7 @@ House keeping:
 - Lecture:
     - https://exercism.org/tracks/rust/concepts/enums
 
-- [ ] Semi Structured Logs
+- [x] Semi Structured Logs
     - https://exercism.org/tracks/rust/exercises/semi-structured-logs
     - Attempts:
         - 2022-12-17
