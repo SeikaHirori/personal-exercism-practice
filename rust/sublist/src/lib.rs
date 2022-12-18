@@ -29,7 +29,6 @@ pub fn sublist<T: PartialEq>(_first_list: &[T], _second_list: &[T]) -> Compariso
                     output = Comparison::Sublist;
                 };
             };
-
         };
 
         output
@@ -39,5 +38,17 @@ pub fn sublist<T: PartialEq>(_first_list: &[T], _second_list: &[T]) -> Compariso
 }
 
 pub fn small_list_in_big_list<T: PartialEq>(small_list: &[T], big_list: &[T]) -> bool {
-    unimplemented!()
+    let mut output: bool = true;
+
+    let mut index = big_list.iter().position(|x| x == &big_list[0]).unwrap(); // RFER 6
+
+    for item in small_list {
+        if item != &big_list[index] {
+            output = false;
+            break;
+        }
+        index += 1;
+    }
+
+    output
 }
