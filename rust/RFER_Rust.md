@@ -1,5 +1,7 @@
 
 # RFER 5
+- Comparing two lists
+    - https://stackoverflow.com/a/72538941
 
 # RFER 4
 - 'const' to use for value that will be constantly used. This also reduces the need 
