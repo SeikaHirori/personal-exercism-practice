@@ -52,6 +52,7 @@ House keeping:
     - https://exercism.org/tracks/rust/exercises/sublist
     - ATTEMpTS:
         - 2022-12-18
+            - FAILED
     - NOTES:
         - RFER 7:
             - Other person's solution uses Rust's func, windows(), which is unique
