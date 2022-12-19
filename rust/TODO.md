@@ -50,6 +50,13 @@ House keeping:
 
 - [ ] Sublist
     - https://exercism.org/tracks/rust/exercises/sublist
+    - ATTEMpTS:
+        - 2022-12-18
+    - NOTES:
+        - RFER 7:
+            - Other person's solution uses Rust's func, windows(), which is unique
+            - Use of match case is interesting too
+                - The values from match could be used in a "if" statement
 
 - [ ] Poker
     - https://exercism.org/tracks/rust/exercises/poker

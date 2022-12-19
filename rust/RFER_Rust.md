@@ -1,3 +1,13 @@
+# RFER 7
+- Using Rust's builtin func windows() to compare two lists; if the  values from smaller list is in big list
+    - Solution:
+        - https://exercism.org/tracks/rust/exercises/sublist/solutions/alireza4050
+    - https://doc.rust-lang.org/std/slice/struct.Windows.html
+    - https://tndl.medium.com/rusts-slice-windows-is-really-cool-70d50cdc74c5
+
+- PROBLEM: Sublist
+    - https://exercism.org/tracks/rust/exercises/sublist
+
 # RFER 6
 - Element of index
     - https://stackoverflow.com/a/30558370

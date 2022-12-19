@@ -39,28 +39,33 @@ pub fn sublist<T: PartialEq>(_first_list: &[T], _second_list: &[T]) -> Compariso
 
 pub fn small_list_in_big_list<T: PartialEq>(small_list: &[T], big_list: &[T]) -> bool {
     let mut output: bool = false;
-    let mut copy_biggie: &[T] = big_list.clone();
+    let mut copy_biggie:Vec<&T> = big_list.into_iter().clone().collect();
 
     'outer: {
-        if small_list.len() >= copy_biggie.len() {
+        if small_list.len() > copy_biggie.len() {
             break 'outer;
         }
             
-        let mut index = copy_biggie.iter().position(|x| x == &big_list[0]).unwrap(); // RFER 6
+        let mut index = copy_biggie.iter().position(|x| x == &&small_list[0]).unwrap(); // RFER 6
 
         for item in small_list {
-            if item != &big_list[index] {
+            small_list.windows(size) // RFER 7
+
+            if item != copy_biggie[index] {
                 break;
             }
             index += 1;
         }
-        
+
         if index - small_list.len() == 0 {
             output = true;
             break 'outer;
         }
 
-    }
+        copy_biggie.remove(0);
+        // pop first element from variable copy_biggie // TODO
+
+    };
 
     
 
