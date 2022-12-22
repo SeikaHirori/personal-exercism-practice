@@ -1,16 +1,21 @@
-pub struct Allergies;
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum Allergen {
-    Eggs,
-    Peanuts,
-    Shellfish,
-    Strawberries,
-    Tomatoes,
-    Chocolate,
-    Pollen,
-    Cats,
+    Eggs = 0,
+    Peanuts = 1,
+    Shellfish = 2,
+    Strawberries = 3,
+    Tomatoes = 4,
+    Chocolate = 5,
+    Pollen = 6,
+    Cats = 7,
 }
+
+pub fn convert_to_exponent(item_index:isize) -> u32 {
+    2u32.pow(item_index as u32)
+}
+
+pub struct Allergies;
 
 impl Allergies {
     pub fn new(score: u32) -> Self {

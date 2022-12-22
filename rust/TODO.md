@@ -61,6 +61,11 @@ House keeping:
 
 - [ ] Poker
     - https://exercism.org/tracks/rust/exercises/poker
+    - Attempts:
+        - 2022-12-21
+            - TODO
+
+
 - [ ] Allergies
     - https://exercism.org/tracks/rust/exercises/allergies
 
