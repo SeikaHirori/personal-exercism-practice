@@ -68,6 +68,9 @@ House keeping:
 
 - [ ] Allergies
     - https://exercism.org/tracks/rust/exercises/allergies
+    - ATTEMPTS:
+        - 2022-12-22
+            - FAILED
 
 - [ ] Tournament
     - https://exercism.org/tracks/rust/exercises/tournament
