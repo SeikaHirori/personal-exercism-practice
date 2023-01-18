@@ -26,13 +26,15 @@ func canIBuy(vehicle: String, price: Double, monthlyBudget: Double) -> String {
     return output
 }
 
-let licenseMotorcycle:Set<Int> = Set([2,3])
-let licenseAutomobile:Set<Int> = Set([4,6])
-let licenseCommericalTrucking: Set<Int> = Set([18])
 
 func licenseType(numberOfWheels wheels: Int) -> String {
   // fatalError("Please implement licenseType(numberOfWheels:) function")
 
+    let licenseMotorcycle:Set<Int> = Set([2,3])
+    let licenseAutomobile:Set<Int> = Set([4,6])
+    let licenseCommericalTrucking: Set<Int> = Set([18])
+
+    
     var output:String = "We do not issue licenses for those types of vehicles"
     
     if licenseMotorcycle.contains(wheels)  {
