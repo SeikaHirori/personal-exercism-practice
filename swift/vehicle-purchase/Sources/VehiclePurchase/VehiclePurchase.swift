@@ -47,5 +47,21 @@ func licenseType(numberOfWheels wheels: Int) -> String {
 }
 
 func registrationFee(msrp: Int, yearsOld: Int) -> Int {
-  fatalError("Please implement registrationFee(msrp:yearsOld:) function")
+    // fatalError("Please implement registrationFee(msrp:yearsOld:) function")
+    guard yearsOld < 10 else {return 25}
+    
+    var output:Double
+    
+    var baseCost:Double = 25000.0
+    if msrp > 25000 {
+        baseCost = Double(msrp)
+    }
+    
+    let differenceAfterYears:Double = baseCost * (0.10 * Double(yearsOld))
+
+    output = baseCost - differenceAfterYears
+    
+    output = output / 100.0
+    
+    return Int(output.rounded(.down))
 }
