@@ -15,13 +15,12 @@ func monthlyRateFrom(hourlyRate: Int, withDiscount discount: Double) -> Double {
     
     let dailyTotal = dailyRateFrom(hourlyRate: hourlyRate)
     
-    let discountTotal = dailyTotal * discount
-    
+    let discountTotal = dailyTotal * (discount * 0.01)
     let totalPostDiscount = dailyTotal - discountTotal
     
     output = totalPostDiscount * Double(billableDaysInMonth)
     
-    return output
+    return output.rounded()
 }
 
 func workdaysIn(budget: Double, hourlyRate: Int, withDiscount discount: Double) -> Double {
@@ -30,7 +29,7 @@ func workdaysIn(budget: Double, hourlyRate: Int, withDiscount discount: Double) 
     
     let hourlyTotal = dailyRateFrom(hourlyRate: hourlyRate)
 
-    let postDiscountTotal = hourlyTotal - (hourlyTotal * discount)
+    let postDiscountTotal = hourlyTotal - (hourlyTotal * (discount * 0.01))
     
     output = budget / postDiscountTotal
     
