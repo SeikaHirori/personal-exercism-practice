@@ -30,19 +30,36 @@ func buildSign(for occasion: String, name: String) -> String {
 //
 //    output += String(exclamation)
     
-    var output: String = "Happy \(occasion) \(name)!"
+    let output: String = "Happy \(occasion) \(name)!"
     
     return output
 }
 
 func graduationFor(name: String, year: Int) -> String {
-  fatalError("Please implement the graduationFor(name:year:) function")
+  // fatalError("Please implement the graduationFor(name:year:) function")
+    let output:String = """
+Congratulations \(name)!
+Class of \(String(year))
+"""
     
-    
+    return output
 }
 
 func costOf(sign: String) -> Int {
-    fatalError("Please implement the costOf(sign:) function")
+    // fatalError("Please implement the costOf(sign:) function")
 
+    let basePrice:Int = 20
     
+    
+    let dollarPerCharacter = 2
+    
+    
+    var output:Int = 0
+    
+    output += basePrice
+    guard sign.count > 0 else {return output}
+
+    output += dollarPerCharacter * (sign.count)
+    
+    return output
 }
