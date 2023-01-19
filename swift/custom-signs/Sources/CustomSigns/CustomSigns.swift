@@ -11,24 +11,26 @@ let exclamation:Character = "!"
 
 func buildSign(for occasion: String, name: String) -> String {
     // fatalError("Please implement the buildSign(for:name:) function")
-    var output:String = "Happy" + String(space)
+//    var output:String = "Happy" + String(space)
+//
+//    switch occasion {
+//    case birthday:
+//        output += birthday
+//    case valentine:
+//        output += valentine
+//    case anniversary:
+//        output += anniversary
+//    default:
+//        break
+//    }
+//
+//    output += String(space)
+//
+//    output += name
+//
+//    output += String(exclamation)
     
-    switch occasion {
-    case birthday:
-        output += birthday
-    case valentine:
-        output += valentine
-    case anniversary:
-        output += anniversary
-    default:
-        break
-    }
-    
-    output += String(space)
-    
-    output += name
-    
-    output += String(exclamation)
+    var output: String = "Happy \(occasion) \(name)!"
     
     return output
 }
