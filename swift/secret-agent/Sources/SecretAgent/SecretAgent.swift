@@ -18,7 +18,10 @@ func protectSecret(_ secret: String, withPassword password: String) -> (String) 
 func generateCombination(forRoom room: Int, usingFunction f: (Int) -> Int) -> (Int, Int, Int) {
   // fatalError("Please implement the generateCombination(forRoom:usingFunction) function")
     
-    
+
+    /*
+        - Commented out code below failed since it didn't need to be implemented: the test codes would handle the algorithm for making a lock. This was to demonstrate that you can use a function as a parameter 
+     */
 //    func makeCombo(_ x:Int) -> Int {
 //        return (x * 13) % 256
 //    }
@@ -26,6 +29,11 @@ func generateCombination(forRoom room: Int, usingFunction f: (Int) -> Int) -> (I
 //    let combo1 = makeCombo(room)
 //    let combo2 = makeCombo(combo1)
 //    let combo3 = makeCombo(combo2)
+    
+    
+    let combo1 = f(room)
+    let combo2 = f(combo1)
+    let combo3 = f(combo2)
     
     let output = (combo1, combo2, combo3)
     
