@@ -11,19 +11,36 @@ func setCard(at index: Int, in stack: [Int], to newCard: Int) -> [Int] {
   // fatalError("Please implement the setCard(at:from:to:) function")
     var output:Array<Int> = stack
     
-    output[index] = newCard
+    guard index <= stack.count else {return stack}
     
+    guard index > 0 else {return stack}
+    
+    output[index] = newCard
     return output
 }
 
 func insert(_ newCard: Int, atTopOf stack: [Int]) -> [Int] {
     // fatalError("Please implement the insert(_:atTopOf:) function")
+    var output:[Int] = stack
     
-        
+    output.append(newCard)
+    
+    return output
 }
 
 func removeCard(at index: Int, from stack: [Int]) -> [Int] {
-  fatalError("Please implement the removeCard(at:from:) function")
+  // fatalError("Please implement the removeCard(at:from:) function")
+    
+//    let lastIndex = stack.count - 1
+    if index < 0 || index >= stack.count {
+        return stack
+    }
+    
+    var output = stack
+    
+    output.remove(at: index)
+    
+    return output
 }
 
 func removeTopCard(_ stack: [Int]) -> [Int] {
