@@ -1,4 +1,3 @@
-import Darwin
 
 func sliceSize(diameter: Double?, slices: Int?) -> Double? {
     // fatalError("Please implement the sliceSize(diameter:slices:) function")
@@ -19,9 +18,23 @@ func sliceSize(diameter: Double?, slices: Int?) -> Double? {
     
     let radius:Double = unwrapDiameter / 2.0
 
-    let area = Double.pi * pow(radius, 2)
+    let area = Double.pi * exponentResult(radius, 2)
     
     output = area / Double(unwrapSlices)
+    
+    return output
+}
+
+func exponentResult(_ decimalNumber:Double,_ power:Int) -> Double {
+    var output:Double = 0
+    
+    for _ in 1...power {
+        if output == 0 {
+            output = decimalNumber
+            continue
+        }
+        output *= decimalNumber
+    }
     
     return output
 }
