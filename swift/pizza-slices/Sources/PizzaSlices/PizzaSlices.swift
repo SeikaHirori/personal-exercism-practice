@@ -22,5 +22,11 @@ func biggestSlice(
   diameterA: String, slicesA: String,
   diameterB: String, slicesB: String
 ) -> String {
-  fatalError("Please implement the biggestSlice(diameterA:slicesA:diameterB:slicesB:) function")
+  // fatalError("Please implement the biggestSlice(diameterA:slicesA:diameterB:slicesB:) function")
+    
+    // Using guard doesn't work as we do not want to return or throw this early
+//    guard let unwrappedDiameterA = Double (diameterA) else {
+//        let unwrappedDiameterA:Double? = nil
+//    }
+    
 }
