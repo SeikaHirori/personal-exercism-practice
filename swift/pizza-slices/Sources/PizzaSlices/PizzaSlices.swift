@@ -37,24 +37,41 @@ func biggestSlice(
 //    guard let unwrappedDiameterA = Double (diameterA) else {
 //        let unwrappedDiameterA:Double? = nil
 //    }
+    // constants
+    let winnerA = "Slice A is bigger"
+    let winnerB = "Slice B is bigger"
+    let tieGame = "Neither slice is bigger"
+    
+    
     let convertDiameterA:Double? = Double(diameterA)
+    let convertSlicesA:Int? = Int(slicesA)
+    
     let convertDiameterB:Double? = Double(diameterB)
+    let convertSlicesB:Int? = Int(slicesB)
     
-    if convertDiameterA == nil && convertDiameterB == nil {
-        return "Neither slice is bigger"
+    
+    let optionalSliceSizeA:Double? = sliceSize(diameter: convertDiameterA, slices: convertSlicesA)
+    let optionalSliceSizeB:Double? = sliceSize(diameter: convertDiameterB, slices: convertSlicesB)
+    
+    
+    if optionalSliceSizeA == nil && optionalSliceSizeB == nil {
+        return tieGame
+    } else if optionalSliceSizeB == nil  {
+        return winnerA
+    } else if optionalSliceSizeA == nil {
+        return winnerB
     }
     
-    if convertDiameterB == nil  {
-        return "Slice A is bigger."
-    } else if convertDiameterA == nil {
-        return "Slice B is bigger."
+    
+    let doubleSliceSizeA:Double = optionalSliceSizeA!
+    let doubleSliceSizeB:Double = optionalSliceSizeB!
+    
+    if doubleSliceSizeA > doubleSliceSizeB {
+        return winnerA
+    } else if doubleSliceSizeA < doubleSliceSizeB {
+        return winnerB
+    } else {
+        return tieGame
     }
     
-    
-    
-    var output:String = ""
-    
-    
-    
-    return output
 }
