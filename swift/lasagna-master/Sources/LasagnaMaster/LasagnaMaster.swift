@@ -52,4 +52,6 @@ func toOz(_ originalValue: inout (noodles: Int, sauce: Double)) {
 }
 
 // TODO: define the 'redWine' function
-
+func redWine(layers: String...) -> Bool {
+    <#function body#>
+}
