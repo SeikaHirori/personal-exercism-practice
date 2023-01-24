@@ -10,7 +10,7 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testRemainingMinutesDefault() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(remainingMinutesInOven(elapsedMinutes: 22), 18)
   }
 
