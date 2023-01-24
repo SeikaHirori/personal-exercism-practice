@@ -61,13 +61,13 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testRedWineRedInequalLayerCount() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertTrue(
       redWine(layers: "sauce", "noodles", "sauce", "noodles", "meat", "noodles", "mozzarella"))
   }
   
   func testRedWineRedEqualLayerCount() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertTrue(
       redWine(
         layers: "sauce", "noodles", "ricotta", "sauce", "noodles", "béchamel", "meat", "noodles", 
@@ -75,7 +75,7 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testRedWineWhite() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertFalse(
       redWine(
         layers: "sauce", "noodles", "béchamel", "meat", "mozzarella", "noodles", "sauce", "ricotta",

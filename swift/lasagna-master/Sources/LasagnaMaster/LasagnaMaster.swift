@@ -41,14 +41,14 @@ func quantities(layers: String...) -> (noodles: Int, sauce: Double) {
 }
 
 // TODO: define the 'toOz' function
-func toOz(noodles: Int, sauce: Double) -> (noodles:Int, sauce: Double) {
+func toOz(_ originalValue: inout (noodles: Int, sauce: Double)) {
     /* Note: https://exercism.org/tracks/swift/concepts/inout-parameters */
     
     let convertLiterToOz:Double = 33.814
     
-    let sauceOz = sauce * convertLiterToOz
+    let sauceOz = originalValue.sauce * convertLiterToOz
     
-    return (noodles: noodles, sauce: sauceOz)
+    originalValue.sauce = sauceOz
 }
 
 // TODO: define the 'redWine' function
