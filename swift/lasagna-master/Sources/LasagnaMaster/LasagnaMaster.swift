@@ -53,5 +53,13 @@ func toOz(_ originalValue: inout (noodles: Int, sauce: Double)) {
 
 // TODO: define the 'redWine' function
 func redWine(layers: String...) -> Bool {
-    <#function body#>
+    /* Note: https://exercism.org/tracks/swift/concepts/nested-functions */
+    
+    /* Psuedocode
+     *** IMPORTANT: Need to use nested functions***
+     - Two outcomes:
+        - Serve white wine if there's more mozzarella, ricotta, and bechamel than meat and sauce.
+        - Else, serve red wine
+     -
+     */
 }
