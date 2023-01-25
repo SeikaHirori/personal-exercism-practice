@@ -57,9 +57,50 @@ func redWine(layers: String...) -> Bool {
     
     /* Psuedocode
      *** IMPORTANT: Need to use nested functions***
+        - go crazy with nested functions for fun.
      - Two outcomes:
         - Serve white wine if there's more mozzarella, ricotta, and bechamel than meat and sauce.
         - Else, serve red wine
-     -
+     - Bool:
+        - True for red wine
+        - false for white wine
      */
+    guard layers.count > 1 else {
+        switch layers {
+        case ["meat"]:
+            return true
+        case ["sauce"]:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var layersToGetWhiteWine:Int = 0
+    var layersToGetRedWine:Int = 0
+    
+    func checkLayers(_ inputLayers:[String]) {
+        // RFER 1... not used yet, but reference could be handy for future.
+        for layer in inputLayers {
+            switch layer {
+            case "meat":
+                layersToGetRedWine += 1
+            case "sauce":
+                layersToGetRedWine += 1
+            default:
+                layersToGetWhiteWine += 1
+            }
+        }
+    }
+    
+    checkLayers(layers)
+    var output_bool:Bool
+    if layersToGetRedWine >= layersToGetWhiteWine {
+        output_bool = true
+    } else {
+        output_bool = false
+    }
+
+    return output_bool
+    
 }
