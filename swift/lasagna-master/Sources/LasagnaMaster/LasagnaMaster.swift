@@ -79,21 +79,49 @@ func redWine(layers: String...) -> Bool {
     var layersToGetWhiteWine:Int = 0
     var layersToGetRedWine:Int = 0
     
-    func checkLayers(_ inputLayers:[String]) {
-        // RFER 1... not used yet, but reference could be handy for future.
-        for layer in inputLayers {
-            switch layer {
-            case "meat":
-                layersToGetRedWine += 1
-            case "sauce":
-                layersToGetRedWine += 1
-            default:
-                layersToGetWhiteWine += 1
-            }
-        }
+    /* Why function below failed the tests: ONLY FIVE SPECIFIC ITEMS WERE BEING ACCOUNTED FOR:
+            - Red wine side:
+                - sauce
+                - meat
+            - white wine side:
+                - mozzarella
+                - ricotta
+                - bechamel
+     
+        Other items like eggplants SHOULD HAVE NOT be accounted.
+     */
+            
+//    func checkLayers(_ inputLayers:[String]) {
+//        // RFER 1... not used yet, but reference could be handy for future.
+//        for layer in inputLayers {
+//            switch layer {
+//            case "meat":
+//                layersToGetRedWine += 1
+//            case "sauce":
+//                layersToGetRedWine += 1
+//            default:
+//                layersToGetWhiteWine += 1
+//            }
+//        }
+//    }
+//    checkLayers(layers)
+    
+    func checkMeat(_ inputLayets:[String],_ item:String) -> Int {
+        
+    }
+    func checkSauce() -> Int {
+        
+    }
+    func checkMozzarella() -> Int {
+        
+    }
+    func checkRicotta() -> Int {
+        
+    }
+    func checkBechamel() -> Int {
+        
     }
     
-    checkLayers(layers)
     var output_bool:Bool
     if layersToGetRedWine >= layersToGetWhiteWine {
         output_bool = true
