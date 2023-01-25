@@ -90,6 +90,11 @@ func redWine(layers: String...) -> Bool {
      
         Other items like eggplants SHOULD HAVE NOT be accounted.
      */
+    
+    /* Parting note:
+        - Ideally, I wanted to pop elements out of the array if the targeted value is still in the array. However, there's no straightforward implementation from Swift lang from my brief Google search.
+     
+     */
             
 //    func checkLayers(_ inputLayers:[String]) {
 //        // RFER 1... not used yet, but reference could be handy for future.
@@ -105,22 +110,54 @@ func redWine(layers: String...) -> Bool {
 //        }
 //    }
 //    checkLayers(layers)
-    
-    func checkMeat(_ inputLayets:[String],_ item:String) -> Int {
+    func checkItem(_ item:String) -> Int {
+        var output_count:Int = 0
         
+        for layer in layers{
+            if layer == item {
+                output_count += 1
+            }
+        }
+        return output_count
+    }
+    
+    
+    func checkMeat() -> Int {
+        let targetedItem:String = "meat"
+        
+        return checkItem(targetedItem)
     }
     func checkSauce() -> Int {
+        let targetedItem:String = "sauce"
         
+        return checkItem(targetedItem)
     }
     func checkMozzarella() -> Int {
+        let targetedItem:String = "mozzarella"
         
+        return checkItem(targetedItem)
     }
+    
     func checkRicotta() -> Int {
+        let targetedItem:String = "ricotta"
         
+        return checkItem(targetedItem)
     }
+    
     func checkBechamel() -> Int {
-        
+        let targetedItem:String = "béchamel"
+
+        return checkItem(targetedItem)
     }
+    
+    let countMeat:Int = checkMeat()
+    let countSauce:Int = checkSauce()
+    let countMozzarella:Int = checkMozzarella()
+    let countRicotta:Int = checkRicotta()
+    let countBechamel:Int = checkBechamel()
+
+    layersToGetRedWine = countMeat + countSauce
+    layersToGetWhiteWine = countMozzarella + countRicotta + countBechamel
     
     var output_bool:Bool
     if layersToGetRedWine >= layersToGetWhiteWine {
