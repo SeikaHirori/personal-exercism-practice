@@ -51,12 +51,12 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testLastLetter() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(lastLetter("Lorem ipsum"), "m")
   }
 
   func testLastLetterEmpty() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(lastLetter(""), "_")
   }
 

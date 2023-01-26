@@ -17,3 +17,7 @@
 # RFER #5
 - Trimming a string (i.e. whitespace)
     - https://www.hackingwithswift.com/example-code/strings/how-to-trim-whitespace-in-a-string
+
+# RFER #6
+- xCode/Swift's (String(describing: ***example***)
+    - https://stackoverflow.com/questions/50774273/what-is-the-different-between-stringdescribing-int-vs-stringint

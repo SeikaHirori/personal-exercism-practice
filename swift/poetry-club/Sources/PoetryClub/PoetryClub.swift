@@ -59,7 +59,25 @@ func trimFromEnd(_ line: String) -> String {
 }
 
 func lastLetter(_ line: String) -> Character {
-  fatalError("lastLetter not implemented -- replace this error with an implementation")
+    print("Starting function lastLetter()")
+    // fatalError("lastLetter not implemented -- replace this error with an implementation")
+    guard line.count >= 1 else {
+        return "_"
+    }
+    
+    let lastCharacterIndex = line.endIndex
+    print("Value of \(lastCharacterIndex)")
+    
+    
+//    let output:Character = line[lastCharacterIndex]
+    let output = line.last
+    print("Result: \(String(describing: output)) \n") /*
+                                                       - xCode suggested "(String(describing: output)"
+                                                       - RFER #6
+                                                       */
+
+    
+    return output!
 }
 
 func backDoorPassword(_ phrase: String) -> String {
