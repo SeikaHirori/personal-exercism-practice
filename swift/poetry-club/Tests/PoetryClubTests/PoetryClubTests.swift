@@ -15,22 +15,22 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testSplitNoNewlines() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(splitOnNewlines("Hello."), ["Hello."])
   }
 
   func testFirstLetter() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(firstLetter("Lorem ipsum"), "L")
   }
 
   func testFirstLetterEmpty() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(firstLetter(""), "_")
   }
 
   func testCapitalize() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(capitalize("HORSES for CoUrSeS!"), "Horses For Courses!")
   }
 
