@@ -35,7 +35,7 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testTrimWithWhitespace() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(
       trimFromEnd("Is all the whitespace gone?   \t  \t"),
       "Is all the whitespace gone?"
@@ -43,7 +43,7 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testTrimWithoutWhitespace() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(
       trimFromEnd("Is all the whitespace gone?"),
       "Is all the whitespace gone?"

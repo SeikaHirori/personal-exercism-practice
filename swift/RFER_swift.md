@@ -12,5 +12,8 @@
 
 # RFER #4
 - Building String from array of strings
-    - SFO: https://www.hackingwithswift.com/example-code/arrays/how-to-join-an-array-of-strings-into-a-single-string
+    - https://www.hackingwithswift.com/example-code/arrays/how-to-join-an-array-of-strings-into-a-single-string
 
+# RFER #5
+- Trimming a string (i.e. whitespace)
+    - https://www.hackingwithswift.com/example-code/strings/how-to-trim-whitespace-in-a-string

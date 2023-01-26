@@ -28,8 +28,7 @@ func capitalize(_ phrase: String) -> String {
     
     var output:String
     
-    let workingString:String = phrase.lowercased()
-    let splitPhrase:[String] = workingString.components(separatedBy: " ")
+    let splitPhrase:[String] = phrase.lowercased().components(separatedBy: " ")
 
     var buildingStringArray:[String] = splitPhrase
     for (indexArray, word) in splitPhrase.enumerated() {
@@ -55,7 +54,8 @@ func capitalize(_ phrase: String) -> String {
 }
 
 func trimFromEnd(_ line: String) -> String {
-  fatalError("trimFromEnd not implemented -- replace this error with an implementation")
+  // fatalError("trimFromEnd not implemented -- replace this error with an implementation")
+    return line.trimmingCharacters(in: .whitespaces) // RFER #5
 }
 
 func lastLetter(_ line: String) -> Character {
