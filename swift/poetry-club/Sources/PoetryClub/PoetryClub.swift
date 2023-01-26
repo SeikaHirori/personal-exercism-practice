@@ -36,9 +36,9 @@ func capitalize(_ phrase: String) -> String {
         let capitalizedLetter:Character = firstLetter(word.uppercased())
 //        let startingIndex = word.index(word.startIndex, offsetBy: 0)
         
-        var newWord = Array(word)
+        var newWord = Array(word) // RFER #3
         newWord[0] = capitalizedLetter
-        let buildStringFromCharacterArray:String = String(newWord)
+        let buildStringFromCharacterArray:String = String(newWord) // RFER #2
         
         print("current loop: \(indexArray)")
         print("Current new word: \(newWord)")
