@@ -71,17 +71,21 @@ func lastLetter(_ line: String) -> Character {
     
 //    let output:Character = line[lastCharacterIndex]
     let output = line.last
-    print("Result: \(String(describing: output)) \n") /*
-                                                       - xCode suggested "(String(describing: output)"
-                                                       - RFER #6
-                                                       */
+    print("Result: \(String(describing: output)) \n") // RFER #6
 
     
     return output!
 }
 
 func backDoorPassword(_ phrase: String) -> String {
-  fatalError("backDoorPassword not implemented -- replace this error with an implementation")
+    let endingWithPlease:String = ", please"
+    // fatalError("backDoorPassword not implemented -- replace this error with an implementation")
+    var output:String
+    
+    output = capitalize(phrase)
+    
+    output += endingWithPlease
+    return output
 }
 
 func ithLetter(_ line: String, i: Int) -> Character {

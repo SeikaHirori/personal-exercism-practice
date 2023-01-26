@@ -61,7 +61,7 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testBackdoorPassword() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(backDoorPassword("scoobyDOO!"), "Scoobydoo!, please")
   }
 
