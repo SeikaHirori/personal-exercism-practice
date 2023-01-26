@@ -29,7 +29,7 @@ func capitalize(_ phrase: String) -> String {
     var output:String
     
     let workingString:String = phrase.lowercased()
-    let splitPhrase:[String] = workingString.components(separatedBy: "")
+    let splitPhrase:[String] = workingString.components(separatedBy: " ")
 
     var buildingStringArray:[String] = splitPhrase
     for (indexArray, word) in splitPhrase.enumerated() {
@@ -38,15 +38,18 @@ func capitalize(_ phrase: String) -> String {
         
         var newWord = Array(word)
         newWord[0] = capitalizedLetter
+        let buildStringFromCharacterArray:String = String(newWord)
         
-        print("Current new world \(newWord)")
+        print("current loop: \(indexArray)")
+        print("Current new word: \(newWord)")
+        print("Word built: \(buildStringFromCharacterArray)")
         
-        buildingStringArray[indexArray] = String(newWord)
-        
+        buildingStringArray[indexArray] = buildStringFromCharacterArray
 
     }
     
-    output = buildingStringArray.joined()
+    output = buildingStringArray.joined(separator: " ")
+    print("Output result: \(output)")
     
     return output
 }
