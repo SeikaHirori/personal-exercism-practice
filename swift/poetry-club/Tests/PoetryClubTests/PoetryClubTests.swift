@@ -76,7 +76,7 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testSecretRoomPassword() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(secretRoomPassword("Open Sesame"), "OPEN SESAME!")
   }
 
