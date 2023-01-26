@@ -112,5 +112,10 @@ func ithLetter(_ line: String, i: Int) -> Character {
 }
 
 func secretRoomPassword(_ phrase: String) -> String {
-  fatalError("secretRoomPassword not implemented -- replace this error with an implementation")
+  // fatalError("secretRoomPassword not implemented -- replace this error with an implementation")
+    var output:String = phrase.uppercased()
+    output += "!"
+    
+    return output
+    
 }
