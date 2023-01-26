@@ -10,3 +10,7 @@
 - Converting String to Character array
     - SFO: https://stackoverflow.com/questions/25921204/convert-swift-string-to-array
 
+# RFER #4
+- Building String from array of strings
+    - SFO: https://www.hackingwithswift.com/example-code/arrays/how-to-join-an-array-of-strings-into-a-single-string
+

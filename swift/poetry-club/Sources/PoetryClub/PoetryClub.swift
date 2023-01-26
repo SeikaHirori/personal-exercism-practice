@@ -48,7 +48,7 @@ func capitalize(_ phrase: String) -> String {
 
     }
     
-    output = buildingStringArray.joined(separator: " ")
+    output = buildingStringArray.joined(separator: " ") // RFER #4
     print("Output result: \(output)")
     
     return output
