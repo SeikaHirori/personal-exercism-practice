@@ -66,12 +66,12 @@ final class PoetryClubTests: XCTestCase {
   }
 
   func testIthLetter() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(ithLetter("Inquisitive", i: 2), "q")
   }
 
   func testIthLetterInvalid() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     XCTAssertEqual(ithLetter("Inquisitive", i: 100), " ")
   }
 

@@ -89,7 +89,26 @@ func backDoorPassword(_ phrase: String) -> String {
 }
 
 func ithLetter(_ line: String, i: Int) -> Character {
-  fatalError("ithLetter not implemented -- replace this error with an implementation")
+    // fatalError("ithLetter not implemented -- replace this error with an implementation")
+    
+    
+    guard line.count > 0 else {
+        /* exit immediately if the String is empty */
+        return " "
+    }
+
+    guard line.count >= i else {
+        /* exit immediately if parameter "i" is greater than or equal to the String's length/size */
+        return " "
+    }
+    
+    var outputCharacter: Character = " "
+    
+    let brokenCharacters:[Character] = Array(line)
+    
+    outputCharacter = brokenCharacters[i]
+    
+    return outputCharacter
 }
 
 func secretRoomPassword(_ phrase: String) -> String {
