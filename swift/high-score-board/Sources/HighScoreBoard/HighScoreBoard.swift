@@ -19,7 +19,13 @@ func addPlayer(_ scores: inout [String: Int], _ name: String, _ score: Int = 0) 
 }
 
 func removePlayer(_ scores: inout [String: Int], _ name: String) {
-  fatalError("newScoreBoard not implemented - please add implementation here")
+    // fatalError("newScoreBoard not implemented - please add implementation here")
+    guard scores.isEmpty == false else {
+        return
+    }
+    
+    scores.removeValue(forKey: name)
+    
 }
 
 func resetScore(_ scores: inout [String: Int], _ name: String) {
