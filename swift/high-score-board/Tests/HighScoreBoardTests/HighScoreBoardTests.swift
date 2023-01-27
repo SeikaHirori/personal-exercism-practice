@@ -10,7 +10,7 @@ final class HighScoreBoardTests: XCTestCase {
   }
 
   func testAddPlayerExplicit() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     var scoreboard = [String: Int]()
     let score = 1337
     addPlayer(&scoreboard, "Jesse Johnson", score)
@@ -26,7 +26,7 @@ final class HighScoreBoardTests: XCTestCase {
   }
 
   func testAddPlayerDefault() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     var scoreboard = [String: Int]()
     addPlayer(&scoreboard, "Jesse Johnson")
     if let jjScore = scoreboard["Jesse Johnson"] {
