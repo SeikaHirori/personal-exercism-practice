@@ -21,3 +21,7 @@
 # RFER #6
 - xCode/Swift's (String(describing: ***example***)
     - https://stackoverflow.com/questions/50774273/what-is-the-different-between-stringdescribing-int-vs-stringint
+
+# RFER #7
+- xCode sort by ascendinding order:
+    - https://developer.apple.com/documentation/swift/array/sort()

@@ -65,14 +65,15 @@ func orderByPlayers(_ scores: [String: Int]) -> [(String, Int)] {
 
 func orderByScores(_ scores: [String: Int]) -> [(String, Int)] {
     // fatalError("orderByScores not implemented - please add implementation here")
-    let sortedValues = Array(scores.values).sorted()
+    let sortedValues = Array(scores.values).sorted(by:>) // RFER #7
     
 //    var sortedKeys:[String] = []
 
     var output:[(String, Int)] = []
     
 //    var index:Int = 0
-
+    
+    // Big O Notation: n**2
     for sortedValue in sortedValues {
         for (key, value) in scores {
             if value == sortedValue {
