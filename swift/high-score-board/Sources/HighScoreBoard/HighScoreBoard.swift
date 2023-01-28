@@ -29,15 +29,38 @@ func removePlayer(_ scores: inout [String: Int], _ name: String) {
 }
 
 func resetScore(_ scores: inout [String: Int], _ name: String) {
-  fatalError("removePlayer not implemented - please add implementation here")
+    // fatalError("removePlayer not implemented - please add implementation here")
+    scores[name] = 0
 }
 
 func updateScore(_ scores: inout [String: Int], _ name: String, _ delta: Int) {
-  fatalError("updateScore not implemented - please add implementation here")
+  // fatalError("updateScore not implemented - please add implementation here")
+    scores[name] = delta + (scores[name] ?? 0)
 }
 
 func orderByPlayers(_ scores: [String: Int]) -> [(String, Int)] {
-  fatalError("orderByPlayers not implemented - please add implementation here")
+    // fatalError("orderByPlayers not implemented - please add implementation here")
+    /*  Note AFTER SUBMISSION:
+        - Check other people's answer to see if it's possible to reduce Big O Notation
+        
+     */
+    
+    
+    let sortedKeys = Array(scores.keys).sorted()
+    
+    var sortedValues:[Int] = []
+    
+    
+    for itemKey in sortedKeys {
+        sortedValues.append(scores[itemKey] ?? 0)
+    }
+    
+    var output:[(String, Int)] = []
+    for (index, sortedKey) in sortedKeys.enumerated() {
+        output.append((sortedKey, sortedValues[index]))
+    }
+    
+    return output
 }
 
 func orderByScores(_ scores: [String: Int]) -> [(String, Int)] {
