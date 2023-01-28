@@ -25,3 +25,15 @@
 # RFER #7
 - xCode sort by ascendinding order:
     - https://developer.apple.com/documentation/swift/array/sort()
+
+# RFER #8
+- What "$0" syntax means
+    - Note: It represents first argrument
+    
+    - Q&A: https://developer.apple.com/forums/thread/124678
+
+    - Swift Doc, Section "Closure Expression Syntax"
+        - https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID95
+
+    - Examples that uses this syntax:
+        - https://exercism.org/tracks/swift/exercises/high-score-board/solutions/GrahamLea

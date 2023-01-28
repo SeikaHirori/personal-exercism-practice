@@ -45,42 +45,47 @@ func orderByPlayers(_ scores: [String: Int]) -> [(String, Int)] {
         
      */
     
+//
+//    let sortedKeys = Array(scores.keys).sorted()
+//
+//    var sortedValues:[Int] = []
+//
+//
+//    for itemKey in sortedKeys {
+//        sortedValues.append(scores[itemKey] ?? 0)
+//    }
+//
+//    var output:[(String, Int)] = []
+//    for (index, sortedKey) in sortedKeys.enumerated() {
+//        output.append((sortedKey, sortedValues[index]))
+//    }
+//
+//    return output
     
-    let sortedKeys = Array(scores.keys).sorted()
+    return scores.sorted(by: {$0.key < $1.key}) // RFER #8
     
-    var sortedValues:[Int] = []
-    
-    
-    for itemKey in sortedKeys {
-        sortedValues.append(scores[itemKey] ?? 0)
-    }
-    
-    var output:[(String, Int)] = []
-    for (index, sortedKey) in sortedKeys.enumerated() {
-        output.append((sortedKey, sortedValues[index]))
-    }
-    
-    return output
 }
 
 func orderByScores(_ scores: [String: Int]) -> [(String, Int)] {
     // fatalError("orderByScores not implemented - please add implementation here")
-    let sortedValues = Array(scores.values).sorted(by:>) // RFER #7
+    //    let sortedValues = Array(scores.values).sorted(by:>) // RFER #7
+    //
+    ////    var sortedKeys:[String] = []
+    //
+    //    var output:[(String, Int)] = []
+    //
+    ////    var index:Int = 0
+    //
+    //    // Big O Notation: n**2
+    //    for sortedValue in sortedValues {
+    //        for (key, value) in scores {
+    //            if value == sortedValue {
+    //                output.append((key, sortedValue))
+    //            }
+    //        }
+    //    }
+    //
+    //    return output
     
-//    var sortedKeys:[String] = []
-
-    var output:[(String, Int)] = []
-    
-//    var index:Int = 0
-    
-    // Big O Notation: n**2
-    for sortedValue in sortedValues {
-        for (key, value) in scores {
-            if value == sortedValue {
-                output.append((key, sortedValue))
-            }
-        }
-    }
-        
-    return output
+    return scores.sorted(by: {$0.value > $1.value}) // RFER # 8
 }
