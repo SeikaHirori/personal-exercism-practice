@@ -73,6 +73,7 @@ func makeWedges(needed: Int, limes: [String]) -> Int {
 
 func finishShift(minutesLeft: Int, remainingOrders: [[String]]) -> [[String]] {
 //  fatalError("Please implement the finishShift(minutesLeft:remainingOrders:) function")
+    
     var copyMinutesLeft:Double = Double(minutesLeft)
     var outputRemainingOrders: [[String]] = remainingOrders
     
@@ -84,12 +85,41 @@ func finishShift(minutesLeft: Int, remainingOrders: [[String]]) -> [[String]] {
         
     } while copyMinutesLeft > 0 && outputRemainingOrders.isEmpty != true
     
-    
     return outputRemainingOrders
 }
 
 func orderTracker(orders: [(drink: String, time: String)]) -> (
   beer: (first: String, last: String, total: Int)?, soda: (first: String, last: String, total: Int)?
 ) {
-  fatalError("Please implement the orderTracker(orders:) function")
+//  fatalError("Please implement the orderTracker(orders:) function")
+    
+    var firstBeerTime:String? = nil
+    var lastBeerTime:String? = nil
+    var totalBeerAmount: Int = 0
+    
+    var firstSodaTime:String? = nil
+    var lastSodaTime:String? = nil
+    var totalSodaAmount: Int = 0
+    
+    for order in orders {
+        let currentDrink = order.drink.lowercased() // Adding lowercased to be safe
+        let currentTime = order.time
+        
+        if currentDrink == "beer" {
+            if firstBeerTime == nil {
+                firstBeerTime = currentTime
+            }
+            lastBeerTime = currentTime
+            totalBeerAmount += 1
+            
+        } else if currentDrink == "soda"{
+            if firstSodaTime == nil {
+                firstSodaTime = currentTime
+            }
+            lastSodaTime = currentTime
+            totalSodaAmount += 1
+        }
+    }
+    
+    return (beer: outputBeer, soda:outputSoda)
 }
