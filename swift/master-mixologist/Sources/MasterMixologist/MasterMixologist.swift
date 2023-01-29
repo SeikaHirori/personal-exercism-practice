@@ -121,5 +121,16 @@ func orderTracker(orders: [(drink: String, time: String)]) -> (
         }
     }
     
+    var outputBeer: (String, String, Int)? = nil
+    var outputSoda: (String, String, Int)? = nil
+    
+    if firstBeerTime != nil && lastBeerTime != nil && totalBeerAmount > 0 {
+        outputBeer = (first: firstBeerTime!, last: lastSodaTime!, total: totalBeerAmount)
+    }
+    
+    if firstSodaTime != nil && lastSodaTime != nil && totalSodaAmount > 0 {
+        outputSoda = (first: firstSodaTime!, last: lastSodaTime!, total: totalSodaAmount)
+    }
+    
     return (beer: outputBeer, soda:outputSoda)
 }
