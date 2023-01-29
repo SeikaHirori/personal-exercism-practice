@@ -72,7 +72,20 @@ func makeWedges(needed: Int, limes: [String]) -> Int {
 }
 
 func finishShift(minutesLeft: Int, remainingOrders: [[String]]) -> [[String]] {
-  fatalError("Please implement the finishShift(minutesLeft:remainingOrders:) function")
+//  fatalError("Please implement the finishShift(minutesLeft:remainingOrders:) function")
+    var copyMinutesLeft:Int = minutesLeft
+    var outputRemainingOrders: [[String]] = remainingOrders
+    
+    repeat {
+        let currentOrder = outputRemainingOrders[0]
+        outputRemainingOrders.removeFirst()
+        
+        copyMinutesLeft -= timeToPrepare(drinks: currentOrder)
+        
+    } while copyMinutesLeft > 0 && outputRemainingOrders.isEmpty != true
+    
+    
+    return outputRemainingOrders
 }
 
 func orderTracker(orders: [(drink: String, time: String)]) -> (
