@@ -1,5 +1,35 @@
 func timeToPrepare(drinks: [String]) -> Double {
-  fatalError("Please implement the timeToPrepare(drinks:) function")
+    // fatalError("Please implement the timeToPrepare(drinks:) function")
+    var preparationTime:Double = 0.0
+    
+    var copyDrinks = drinks
+    
+    repeat {
+        let drink:String = copyDrinks.popLast() ?? "_"
+        
+        let zeroPointFiveMinutesDrinks: [String] = ["beer", "soda", "water"]
+        let onePointZeroMinutesDrinks: [String] = ["shot",]
+        let onePointFiveMinutesDrinks: [String] = ["mixed drink",]
+        let twoPointFiveMinutesDrinks: [String] = ["fancy drink",]
+        let threePointZeroMinutesDrinks: [String] = ["frozen drink",]
+        
+        
+        if zeroPointFiveMinutesDrinks.contains(drink) {
+            preparationTime += 0.5
+        } else if onePointZeroMinutesDrinks.contains(drink) {
+            preparationTime += 1.0
+        } else if onePointFiveMinutesDrinks.contains(drink) {
+            preparationTime += 1.5
+        } else if twoPointFiveMinutesDrinks.contains(drink) {
+            preparationTime += 2.5
+        } else if threePointZeroMinutesDrinks.contains(drink) {
+            preparationTime += 3.0
+        }
+        
+    } while copyDrinks.isEmpty != true
+    
+    
+    return preparationTime
 }
 
 func makeWedges(needed: Int, limes: [String]) -> Int {
