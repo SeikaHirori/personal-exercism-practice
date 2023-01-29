@@ -2,17 +2,16 @@ func timeToPrepare(drinks: [String]) -> Double {
     // fatalError("Please implement the timeToPrepare(drinks:) function")
     var preparationTime:Double = 0.0
     
+    let zeroPointFiveMinutesDrinks: [String] = ["beer", "soda", "water"]
+    let onePointZeroMinutesDrinks: [String] = ["shot",]
+    let onePointFiveMinutesDrinks: [String] = ["mixed drink",]
+    let twoPointFiveMinutesDrinks: [String] = ["fancy drink",]
+    let threePointZeroMinutesDrinks: [String] = ["frozen drink",]
+
     var copyDrinks = drinks
-    
+
     repeat {
         let drink:String = copyDrinks.popLast() ?? "_"
-        
-        let zeroPointFiveMinutesDrinks: [String] = ["beer", "soda", "water"]
-        let onePointZeroMinutesDrinks: [String] = ["shot",]
-        let onePointFiveMinutesDrinks: [String] = ["mixed drink",]
-        let twoPointFiveMinutesDrinks: [String] = ["fancy drink",]
-        let threePointZeroMinutesDrinks: [String] = ["frozen drink",]
-        
         
         if zeroPointFiveMinutesDrinks.contains(drink) {
             preparationTime += 0.5
