@@ -38,54 +38,24 @@ class Window {
             }
         }
         
+        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+            if inputToSize > screenSizeDimension {
+                return screenSizeDimension
+            } else {
+                return inputToSize
+            }
+        }
         
-
-//        func resizeFarthestPoint(inputToSize:Int, screenSizeDirection:Int, positionAxis:Int) -> (Int) {
-//
-//            // add the new resize into the position to see if it goes beyond the screen size
-//            let spaceRemaining:Int = screenSizeDirection - positionAxis
-//
-//            if inputToSize < spaceRemaining {
-//                return inputToSize
-//            } else {
-//                return spaceRemaining
-//            }
-//
-//
-//        }
-//
-//
-//        func checkSizeX(inputToSize:Int) -> Int {
-//            var output:Int
-//
-//            output = meetsMinimumSize(inputToSize: inputToSize)
-//
-//            output = resizeFarthestPoint(inputToSize: output, screenSizeDirection: self.screenSize.width, positionAxis: self.position.x)
-//
-//            return output
-//        }
-//
-//        func checkSizeY(inputToSize:Int) -> Int {
-//            var output:Int
-//            output = meetsMinimumSize(inputToSize: inputToSize)
-//
-//            output = resizeFarthestPoint(inputToSize: output, screenSizeDirection: self.screenSize.width, positionAxis: self.position.y)
-//
-//            return output
-//        }
-//
-//
-//        let toWidth:Int = checkSizeX(inputToSize: to.width)
-//        let toHeight:Int = checkSizeY(inputToSize: to.height)
+        func checkNewResize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+            var output:Int = inputToSize
+            output = meetsMinimumSize(inputToSize: output)
+            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension)
+            
+            return output
+        }
         
-        
-        
-        
-        
-        
-        let toWidth = meetsMinimumSize(inputToSize: to.width)
-        let toHeight = meetsMinimumSize(inputToSize: to.height)
-        
+        let toWidth:Int = checkNewResize(inputToSize: to.width, screenSizeDimension:self.screenSize.width)
+        let toHeight:Int = checkNewResize(inputToSize: to.height, screenSizeDimension: self.screenSize.height)
         
         size.width = toWidth
         size.height = toHeight
@@ -96,36 +66,24 @@ class Window {
         var toPosX:Int = to.x
         var toPosY:Int = to.y
         
-        let currentSizeWidth:Int = self.screenSize.width
-        let currentSizeHeight:Int = self.screenSize.height
-        
-        let farthestPointX:Int = grabFarthestPoint(positionAxis: toPosX, sizeAxis: currentSizeHeight)
-        let farthestPointY:Int = grabFarthestPoint(positionAxis: toPosY, sizeAxis: currentSizeHeight)
-        
         if toPosX < 0 {
             toPosX = 0
-        } else if farthestPointX >= currentSizeWidth{
-            toPosX = currentSizeWidth - self.size.width
+        } else if toPosX > self.screenSize.width {
+//            toPosX = self.screenSize.width
+            toPosX = self.screenSize.width - self.size.width
 
         }
         
         if toPosY < 0 {
             toPosY = 0
-        } else if farthestPointY > currentSizeHeight {
-            toPosY = currentSizeHeight - self.size.height
+        } else if toPosY > self.screenSize.height {
+//            toPosY = self.screenSize.height
+            toPosY = self.screenSize.height - self.size.height
         }
         
         self.position.x = toPosX
         self.position.y = toPosY
         
-    }
-    
-    func grabFarthestPoint(positionAxis:Int, sizeAxis:Int) -> (Int) {
-        var output:Int
-        
-        output = positionAxis + sizeAxis
-        
-        return output
     }
     
     func update(title:String) -> () {
