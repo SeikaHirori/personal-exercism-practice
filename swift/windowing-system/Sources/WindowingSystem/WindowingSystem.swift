@@ -84,11 +84,13 @@ class Window {
     }
     
     func update(title:String) -> () {
-        fatalError()
+        self.title = title
+        
     }
     
     func update(text:String?) -> () {
-        fatalError()
+        self.contents = text
+
     }
     
     func display() -> (String) {
@@ -107,11 +109,11 @@ class Window {
         } else {
             disContents = self.contents!
         }
-        
+         
         output = """
         \(disTitle)\n
-        Position: (\(disPosX), \(disPoxY)\n
-        
+        Position: (\(disPosX), \(disPoxY)), Size: (\(disSizeWidth) x \(disSizeHeight))\n
+        \(disContents)\n
         """
         
         
@@ -121,4 +123,13 @@ class Window {
 }
 
 // Step 7: Create a new Window
+let mainResize:Size = Size(width: 400, height: 300)
+let mainMove:Position = Position(x: 100, y: 100)
+let mainTitle:String = "Main Window"
+let mainText:String? = "This is the main window"
+
 var mainWindow:Window = Window()
+mainWindow.resize(to: mainResize)
+mainWindow.move(to: mainMove)
+mainWindow.update(title: mainTitle)
+mainWindow.update(text: mainText)
