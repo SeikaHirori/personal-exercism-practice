@@ -38,7 +38,7 @@ class Window {
             }
         }
         
-        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int, positionAxis:Int) -> (Int) {
             if inputToSize > screenSizeDimension {
                 return screenSizeDimension
             } else {
@@ -46,16 +46,16 @@ class Window {
             }
         }
         
-        func checkNewResize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+        func checkNewResize(inputToSize:Int, screenSizeDimension:Int, positionAxis:Int) -> (Int) {
             var output:Int = inputToSize
             output = meetsMinimumSize(inputToSize: output)
-            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension)
+            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension, positionAxis: positionAxis)
             
             return output
         }
         
-        let toWidth:Int = checkNewResize(inputToSize: to.width, screenSizeDimension:self.screenSize.width)
-        let toHeight:Int = checkNewResize(inputToSize: to.height, screenSizeDimension: self.screenSize.height)
+        let toWidth:Int = checkNewResize(inputToSize: to.width, screenSizeDimension:self.screenSize.width, positionAxis: self.position.x)
+        let toHeight:Int = checkNewResize(inputToSize: to.height, screenSizeDimension: self.screenSize.height, positionAxis: self.position.y)
         
         size.width = toWidth
         size.height = toHeight
