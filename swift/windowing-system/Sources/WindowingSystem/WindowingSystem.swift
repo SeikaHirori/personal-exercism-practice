@@ -37,25 +37,42 @@ class Window {
                 return 1
             }
         }
+//
+//        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+//            if inputToSize > screenSizeDimension {
+////                return screenSizeDimension
+//                return
+//            } else {
+//                return inputToSize
+//            }
+//        }
         
-        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
-            if inputToSize > screenSizeDimension {
-                return screenSizeDimension
-            } else {
-                return inputToSize
-            }
-        }
-        
-        func checkNewResize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
-            var output:Int = inputToSize
-            output = meetsMinimumSize(inputToSize: output)
-            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension)
+        func checkSizeX(inputToSize:Int) -> Int {
+            var output:Int
+            output = meetsMinimumSize(inputToSize: inputToSize)
             
             return output
         }
         
-        let toWidth:Int = checkNewResize(inputToSize: to.width, screenSizeDimension:self.screenSize.width)
-        let toHeight:Int = checkNewResize(inputToSize: to.height, screenSizeDimension: self.screenSize.height)
+        func checkSizeY(inputToSize:Int) -> Int {
+            var output:Int
+            output = meetsMinimumSize(inputToSize: inputToSize)
+            
+            
+            return output
+        }
+        
+        
+//        func checkNewResize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+//            var output:Int = inputToSize
+//            output = meetsMinimumSize(inputToSize: output)
+//            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension)
+//
+//            return output
+//        }
+        
+        let toWidth:Int = checkSizeX(inputToSize: to.width)
+        let toHeight:Int = checkSizeY(inputToSize: to.height)
         
         size.width = toWidth
         size.height = toHeight
