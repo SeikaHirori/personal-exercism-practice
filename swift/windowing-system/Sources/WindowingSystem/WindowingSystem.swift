@@ -62,7 +62,25 @@ class Window {
     }
     
     func move(to:Position) -> () {
-        fatalError()
+//        fatalError()
+        var toPosX:Int = to.x
+        var toPosY:Int = to.y
+        
+        if toPosX < 0 {
+            toPosX = 0
+        } else if toPosX > self.screenSize.width {
+            toPosX = self.screenSize.width
+        }
+        
+        if toPosY < 0 {
+            toPosY = 0
+        } else if toPosY > self.screenSize.height {
+            toPosY = self.screenSize.height
+        }
+        
+        self.position.x = toPosX
+        self.position.y = toPosY
+        
     }
     
     func update(title:String) -> () {
@@ -73,10 +91,34 @@ class Window {
         fatalError()
     }
     
-    func display() -> () {
-        fatalError()
+    func display() -> (String) {
+        var output:String
+        
+        // "dis" stands for "display"
+        let disTitle:String = self.title
+        let disPosX = self.position.x
+        let disPoxY = self.position.y
+        let disSizeWidth = self.size.width
+        let disSizeHeight = self.size.height
+        var disContents:String
+        
+        if self.contents == nil {
+            disContents = "[This window intentionally left blank]"
+        } else {
+            disContents = self.contents!
+        }
+        
+        output = """
+        \(disTitle)\n
+        Position: (\(disPosX), \(disPoxY)\n
+        
+        """
+        
+        
+        return output
     }
     
 }
 
 // Step 7: Create a new Window
+var mainWindow:Window = Window()
