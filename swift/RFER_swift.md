@@ -37,3 +37,7 @@
 
     - Examples that uses this syntax:
         - https://exercism.org/tracks/swift/exercises/high-score-board/solutions/GrahamLea
+
+# RFER #9
+- Example of submission using "if let" if nil needs to be outputted
+    - https://exercism.org/tracks/swift/exercises/master-mixologist/solutions/kwallace
