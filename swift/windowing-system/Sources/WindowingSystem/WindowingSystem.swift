@@ -29,4 +29,54 @@ class Window {
     var position:Position = Position()
     var contents:String? = nil
     
+    func resize(to:Size) -> () {
+        func meetsMinimumSize(inputToSize:Int) -> (Int) {
+            if inputToSize > 0 {
+                return inputToSize
+            } else {
+                return 1
+            }
+        }
+        
+        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+            if inputToSize > screenSizeDimension {
+                return screenSizeDimension
+            } else {
+                return inputToSize
+            }
+        }
+        
+        func checkNewResize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
+            var output:Int = inputToSize
+            output = meetsMinimumSize(inputToSize: output)
+            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension)
+            
+            return output
+        }
+        
+        let toWidth:Int = checkNewResize(inputToSize: to.width, screenSizeDimension:self.screenSize.width)
+        let toHeight:Int = checkNewResize(inputToSize: to.height, screenSizeDimension: self.screenSize.height)
+        
+        size.width = toWidth
+        size.height = toHeight
+    }
+    
+    func move(to:Position) -> () {
+        fatalError()
+    }
+    
+    func update(title:String) -> () {
+        fatalError()
+    }
+    
+    func update(text:String?) -> () {
+        fatalError()
+    }
+    
+    func display() -> () {
+        fatalError()
+    }
+    
 }
+
+// Step 7: Create a new Window

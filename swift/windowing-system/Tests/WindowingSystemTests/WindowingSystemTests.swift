@@ -89,7 +89,7 @@ final class WindowingSystemTests: XCTestCase {
   }
 
   func testResizeValid() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     let testWindow: Window = {
       let window = Window()
       window.title = "Test Window"
@@ -104,7 +104,7 @@ final class WindowingSystemTests: XCTestCase {
   }
 
   func testResizeTooFar() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     let testWindow: Window = {
       let window = Window()
       window.title = "Test Window"
@@ -119,7 +119,7 @@ final class WindowingSystemTests: XCTestCase {
   }
 
   func testResizeNegative() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    try XCTSkipIf(false && !runAll)  // change true to false to run this test
     let testWindow: Window = {
       let window = Window()
       window.title = "Test Window"
