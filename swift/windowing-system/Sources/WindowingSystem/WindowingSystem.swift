@@ -37,19 +37,12 @@ class Window {
                 return 1
             }
         }
-//
-//        func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
-//            if inputToSize > screenSizeDimension {
-////                return screenSizeDimension
-//                return
-//            } else {
-//                return inputToSize
-//            }
-//        }
+
         
         func checkSizeX(inputToSize:Int) -> Int {
             var output:Int
             output = meetsMinimumSize(inputToSize: inputToSize)
+            
             
             return output
         }
@@ -62,15 +55,7 @@ class Window {
             return output
         }
         
-        
-//        func checkNewResize(inputToSize:Int, screenSizeDimension:Int) -> (Int) {
-//            var output:Int = inputToSize
-//            output = meetsMinimumSize(inputToSize: output)
-//            output = newResizeFitsScreenSize(inputToSize: output, screenSizeDimension: screenSizeDimension)
-//
-//            return output
-//        }
-        
+                
         let toWidth:Int = checkSizeX(inputToSize: to.width)
         let toHeight:Int = checkSizeY(inputToSize: to.height)
         
@@ -83,24 +68,38 @@ class Window {
         var toPosX:Int = to.x
         var toPosY:Int = to.y
         
+        let currentSizeWidth:Int = self.screenSize.width
+        let currentSizeHeight:Int = self.screenSize.height
+        
+        let farthestPointX:Int = grabFarthestPoint(positionAxis: toPosX, sizeAxis: currentSizeHeight)
+        let farthestPointY:Int = grabFarthestPoint(positionAxis: toPosY, sizeAxis: currentSizeHeight)
+        
         if toPosX < 0 {
             toPosX = 0
-        } else if toPosX > self.screenSize.width {
-//            toPosX = self.screenSize.width
-            toPosX = self.screenSize.width - self.size.width
+        } else if farthestPointX >= currentSizeWidth{
+//            toPosX = currentSizeWidth
+            toPosX = currentSizeWidth - self.size.width
 
         }
         
         if toPosY < 0 {
             toPosY = 0
-        } else if toPosY > self.screenSize.height {
-//            toPosY = self.screenSize.height
-            toPosY = self.screenSize.height - self.size.height
+        } else if farthestPointY > currentSizeHeight {
+//            toPosY = currentSizeHeight
+            toPosY = currentSizeHeight - self.size.height
         }
         
         self.position.x = toPosX
         self.position.y = toPosY
         
+    }
+    
+    func grabFarthestPoint(positionAxis:Int, sizeAxis:Int) -> (Int) {
+        var output:Int
+        
+        output = positionAxis + sizeAxis
+        
+        return output
     }
     
     func update(title:String) -> () {
