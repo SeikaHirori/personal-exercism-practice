@@ -77,7 +77,6 @@ class Window {
         if toPosX < 0 {
             toPosX = 0
         } else if farthestPointX >= currentSizeWidth{
-//            toPosX = currentSizeWidth
             toPosX = currentSizeWidth - self.size.width
 
         }
@@ -85,7 +84,6 @@ class Window {
         if toPosY < 0 {
             toPosY = 0
         } else if farthestPointY > currentSizeHeight {
-//            toPosY = currentSizeHeight
             toPosY = currentSizeHeight - self.size.height
         }
         
