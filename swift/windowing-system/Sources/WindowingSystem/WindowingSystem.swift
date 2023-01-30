@@ -69,13 +69,16 @@ class Window {
         if toPosX < 0 {
             toPosX = 0
         } else if toPosX > self.screenSize.width {
-            toPosX = self.screenSize.width
+//            toPosX = self.screenSize.width
+            toPosX = self.screenSize.width - self.size.width
+
         }
         
         if toPosY < 0 {
             toPosY = 0
         } else if toPosY > self.screenSize.height {
-            toPosY = self.screenSize.height
+//            toPosY = self.screenSize.height
+            toPosY = self.screenSize.height - self.size.height
         }
         
         self.position.x = toPosX
@@ -111,9 +114,10 @@ class Window {
         }
          
         output = """
-        \(disTitle)\n
-        Position: (\(disPosX), \(disPoxY)), Size: (\(disSizeWidth) x \(disSizeHeight))\n
-        \(disContents)\n
+        \(disTitle)
+        Position: (\(disPosX), \(disPoxY)), Size: (\(disSizeWidth) x \(disSizeHeight))
+        \(disContents)
+        
         """
         
         
@@ -128,8 +132,11 @@ let mainMove:Position = Position(x: 100, y: 100)
 let mainTitle:String = "Main Window"
 let mainText:String? = "This is the main window"
 
-var mainWindow:Window = Window()
-mainWindow.resize(to: mainResize)
-mainWindow.move(to: mainMove)
-mainWindow.update(title: mainTitle)
-mainWindow.update(text: mainText)
+var mainWindow:Window {
+    let newWindow:Window = Window()
+    newWindow.resize(to: mainResize)
+    newWindow.move(to: mainMove)
+    newWindow.update(title: mainTitle)
+    newWindow.update(text: mainText)
+    return newWindow
+}
