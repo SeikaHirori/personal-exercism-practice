@@ -39,8 +39,11 @@ class Window {
         }
         
         func newResizeFitsScreenSize(inputToSize:Int, screenSizeDimension:Int, positionAxis:Int) -> (Int) {
-            if inputToSize > screenSizeDimension {
-                return screenSizeDimension
+            let farthestPointAxis = grabFarthestPoint(positionAxis: positionAxis, sizeAxis: inputToSize)
+            
+            if farthestPointAxis > screenSizeDimension {
+                let spaceRemainingPoint:Int = screenSizeDimension - positionAxis
+                return spaceRemainingPoint
             } else {
                 return inputToSize
             }
