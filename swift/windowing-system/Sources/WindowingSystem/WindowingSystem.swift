@@ -66,6 +66,8 @@ class Window {
         var toPosX:Int = to.x
         var toPosY:Int = to.y
         
+        
+        
         if toPosX < 0 {
             toPosX = 0
         } else if toPosX > self.screenSize.width {
@@ -84,6 +86,14 @@ class Window {
         self.position.x = toPosX
         self.position.y = toPosY
         
+    }
+    
+    func grabFarthestPoint(positionAxis:Int, sizeAxis:Int) -> (Int) {
+        var output: Int
+        
+        output = positionAxis + sizeAxis
+        
+        return output
     }
     
     func update(title:String) -> () {
