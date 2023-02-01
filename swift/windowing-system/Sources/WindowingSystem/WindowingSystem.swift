@@ -66,11 +66,12 @@ class Window {
         var toPosX:Int = to.x
         var toPosY:Int = to.y
         
-        
+        let farthestX = grabFarthestPoint(positionAxis: toPosX, sizeAxis: self.size.width)
+        let farthestY = grabFarthestPoint(positionAxis: toPosY, sizeAxis: self.size.height)
         
         if toPosX < 0 {
             toPosX = 0
-        } else if toPosX > self.screenSize.width {
+        } else if farthestX > self.screenSize.width {
 //            toPosX = self.screenSize.width
             toPosX = self.screenSize.width - self.size.width
 
@@ -78,7 +79,7 @@ class Window {
         
         if toPosY < 0 {
             toPosY = 0
-        } else if toPosY > self.screenSize.height {
+        } else if farthestY > self.screenSize.height {
 //            toPosY = self.screenSize.height
             toPosY = self.screenSize.height - self.size.height
         }
