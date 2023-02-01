@@ -1,3 +1,5 @@
+// COMPLETE WOOOT! 
+
 // TODO: Define the Position struct
 struct Position {
     var x:Int = 0
