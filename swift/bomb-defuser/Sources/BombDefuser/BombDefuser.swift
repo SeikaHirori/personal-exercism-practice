@@ -9,6 +9,9 @@ let flip:((String,String,String)) -> ((String, String, String)) = {
 //
 //
 //let rotate: (String, String, String) -> (String, String, String) = TODO: Please define the stopAtOne closure
+let rotate: ((String, String, String)) -> ((String, String, String)) = {
+    return ($0.1, $0.2, $0.0)
+}
 
 
 func makeShuffle(
