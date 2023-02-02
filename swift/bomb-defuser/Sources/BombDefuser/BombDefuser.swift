@@ -2,8 +2,7 @@ import Foundation
 
 //let flip: (String, String, String) -> (String, String, String) = TODO: Please define the flip closure
 let flip:((String,String,String)) -> ((String, String, String)) = {
-//    return (a.1, a.0, a.2)
-    return ($0.1, $0.0, $0.2)
+    return ($0.1, $0.0, $0.2) // Type Notation with Tuple (and maybe Array?) is picky.
 }
 
 
