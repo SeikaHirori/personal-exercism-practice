@@ -19,12 +19,28 @@ func makeShuffle(
   rotator: @escaping ((String, String, String)) -> (String, String, String)
 ) -> (UInt8, (String, String, String)) -> (String, String, String) {
 //  fatalError("Please implement the makeShuffle(flipper:rotator:) function")
+    
     var closedSyn: (UInt8, (String, String, String)) -> (String, String, String) = {
+        let debugMessageLookAtMe:String = """
+            
+            
+            
+            ======== THIS IS THE ONE THAT'S FAILING! LOOK AT MEEE :3 ======
+            
+            
+            
+            """
+        
+        if $0 == 113 {
+            print(debugMessageLookAtMe)
+        }
+        
         var bitArray:[Int] = []
         
         var copyUInt8:Int = Int($0)
         
         while copyUInt8 > 0 {
+            
             let dividendCopy = copyUInt8 / 2
             let remainderCopy = copyUInt8 % 2
             
@@ -39,24 +55,39 @@ func makeShuffle(
             
             copyUInt8 = dividendCopy
             
+
+            
         }
         
+        print("********** \n")
+        print("bitArrayRaw: \(bitArray)")
         bitArray = bitArray.reversed()
+        print("Bit array now reversed: \(bitArray)")
         
         var copyTuple:(String, String, String) = $1
+        print("Original Tuple: \(copyTuple)\n")
         
         while bitArray.isEmpty != true {
-            let currentBit = bitArray.popLast()
+            let currentBit:Int = bitArray.popLast()!
+            print("Current bit: \(String(describing: currentBit))")
             
-            switch currentBit {
-            case 0:
+            
+            if currentBit == 0 {
                 copyTuple = flipper(copyTuple)
-            case 1:
+            } else if currentBit == 1{
                 copyTuple = rotator(copyTuple)
-            default:
-                continue
             }
+            
+            print("After action: \(copyTuple)")
+            print("The remaining bits in Array: \(bitArray) \n")
         }
+        
+        print("THE FINISHER: \(copyTuple)")
+        
+        if $0 == 113 {
+            print(debugMessageLookAtMe)
+        }
+        
         return copyTuple
         
     }
