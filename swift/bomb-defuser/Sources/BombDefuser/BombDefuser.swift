@@ -20,7 +20,12 @@ func makeShuffle(
 ) -> (UInt8, (String, String, String)) -> (String, String, String) {
 //  fatalError("Please implement the makeShuffle(flipper:rotator:) function")
     
-    var closedSyn: (UInt8, (String, String, String)) -> (String, String, String) = {
+    let closedSyn: (UInt8, (String, String, String)) -> (String, String, String) = {
+        guard $0 > 0 else {
+            return $1
+        }
+        
+        
         let debugMessageLookAtMe:String = """
             
             
@@ -61,6 +66,12 @@ func makeShuffle(
         
         print("********** \n")
         print("bitArrayRaw: \(bitArray)")
+        if bitArray.count != 8 {
+            print("It size of array isn't 8. Now adding zeroes.")
+            bitArray.append(0)
+            print("bitArrayRaw after adding 0 to get size count of 8: \(bitArray)")
+        }
+        
         bitArray = bitArray.reversed()
         print("Bit array now reversed: \(bitArray)")
         
