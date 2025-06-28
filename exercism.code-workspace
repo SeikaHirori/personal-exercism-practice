@@ -3,15 +3,6 @@
 		{
 			"path": "."
 		},
-		{
-			"path": "typescript"
-		},
-		{
-			"path": "rust"
-		},
-		{
-			"path": "swift"
-		}
 	],
 	"settings": {}
 }
